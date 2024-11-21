@@ -1,6 +1,10 @@
 # Go Application with GORF and MongoDB
 
-![Application Banner](https://github.com/gofr-dev/gofr/assets/44036979/916fe7b1-42fb-4af1-9e0b-4a7a064c243c)
+
+<p align="center">
+  <img src="https://github.com/gofr-dev/gofr/assets/44036979/916fe7b1-42fb-4af1-9e0b-4a7a064c243c" alt="Application Banner" width="600">
+</p>
+
 
 ## Overview
 
