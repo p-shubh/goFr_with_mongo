@@ -1,95 +1,133 @@
 # Go Application with GORF and MongoDB
 
-
-<p align="center">
-  <img src="https://github.com/gofr-dev/gofr/assets/44036979/916fe7b1-42fb-4af1-9e0b-4a7a064c243c" alt="Application Banner" width="600">
-</p>
-
-
 ## Overview
 
-This project is a Go-based application utilizing **GORF** as the ORM and **MongoDB** as the database. It is designed for simplicity, scalability, and performance, making it ideal for modern web applications.
+This Go-based application leverages **GORF** (Go ORM Framework) for database interaction and **MongoDB** as the primary database. The architecture is designed for scalability, simplicity, and high performance, suitable for modern, production-ready web applications.
 
 ## Features
 
-* **GORF Integration:** Simplifies database operations with an intuitive ORM layer.
-* **MongoDB:** A robust and scalable NoSQL database for handling structured and unstructured data.
-* **RESTful API:** Fully functional endpoints to interact with the application.
-* **Containerization:** Docker support for easy deployment.
+* **GORF Integration** : Simplifies database queries with an intuitive ORM layer.
+* **MongoDB** : A powerful NoSQL database for both structured and unstructured data.
+* **RESTful API** : Fully functional endpoints for seamless interaction with the application.
+* **Environment Configurations** : Supports multiple environments such as development, staging, and production.
+* **Docker Support** : Provides containerized deployment for portability and scalability.
 
 ## Prerequisites
 
-Before starting, ensure you have the following installed:
+Ensure you have the following installed on your system:
 
-* [Go](https://golang.org/doc/install)
+* [Go](https://golang.org/doc/install) (version 1.18+)
 * [MongoDB](https://www.mongodb.com/try/download/community)
-* [Docker](https://www.docker.com/products/docker-desktop) (optional, for containerization)
+* [Docker](https://www.docker.com/products/docker-desktop) (for optional containerization)
 
 ## Setup
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
-   ```
-2. Install dependencies:
-   ```bash
-   go mod tidy
-   ```
-3. Configure the `.env` file with your MongoDB connection details:
-   ```dotenv
-   MONGO_URI=mongodb://localhost:27017
-   DATABASE_NAME=your_database_name
-   ```
-4. Run the application:
-   ```bash
-   go run main.go
-   ```
-5. Access the API at `http://localhost:8080`.
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/p-shubh/goFr_with_mongo.git
+cd goFr_with_mongo
+```
+
+### 2. Install Dependencies
+
+```bash
+go mod tidy
+```
+
+### 3. Configure Environment Variables
+
+Update the `.env` file in the `configs` directory with your MongoDB connection details:
+
+```dotenv
+MONGO_URI=mongodb://localhost:27017
+DATABASE_NAME=your_database_name
+```
+
+### 4. Run the Application
+
+Start the application locally:
+
+```bash
+go run main.go
+```
+
+### 5. Access the API
+
+The API will be available at:
+
+```
+http://localhost:8080
+```
 
 ## Project Structure
 
-```
+```plaintext
 .
-├── main.go            # Entry point of the application
-├── controllers        # API handlers
-├── models             # Data models
-├── routes             # Application routes
-├── services           # Business logic
-├── configs            # Configuration files
-├── Dockerfile         # Docker configuration
-├── go.mod             # Dependency management
-├── README.md          # Project documentation
+├── main.go                           # Entry point of the application
+├── .vscode/                          # VSCode launch configurations
+│   └── launch.json
+├── config/                           # Configuration setup
+│   ├── config.go
+│   └── type.go
+├── configs/                          # Environment-specific configuration files
+│   ├── .dev.env
+│   ├── .staging.env
+│   ├── .prod.env
+│   └── .env
+├── connection/database/mongoDb/      # MongoDB connection setup
+│   ├── database.go
+│   └── type.go
+├── router/                           # API routes
+│   ├── router.go
+│   └── type.go
+├── .gitignore                        # Git ignore file
+├── go.mod                            # Dependency management
+├── go.sum                            # Dependency versions
+├── README.md                         # Project documentation
+├── makefile                          # Build automation file
+└── Dockerfile                        # Docker configuration
 ```
 
 ## API Endpoints
 
 | Method | Endpoint        | Description          |
 | ------ | --------------- | -------------------- |
-| GET    | `/items`      | Get all items        |
+| GET    | `/items`      | Retrieve all items   |
 | POST   | `/items`      | Create a new item    |
 | PUT    | `/items/{id}` | Update an item by ID |
 | DELETE | `/items/{id}` | Delete an item by ID |
 
 ## Docker Setup
 
-1. Build the Docker image:
-   ```bash
-   docker build -t go-application .
-   ```
-2. Run the container:
-   ```bash
-   docker run -p 8080:8080 go-application
-   ```
+### 1. Build the Docker Image
+
+```bash
+docker build -t go-application .
+```
+
+### 2. Run the Container
+
+```bash
+docker run -p 8080:8080 go-application
+```
+
+### 3. Verify the Container
+
+Access the API running inside the container at:
+
+```
+http://localhost:8080
+```
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request for review.
+We welcome contributions! Please fork this repository, create a feature branch, and submit a pull request. For major changes, open an issue to discuss your ideas first.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://chatgpt.com/c/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://chatgpt.com/c/LICENSE) file for more details.
 
 ---
 
-Let me know if you'd like additional customization!
+Let me know if you need further adjustments!
