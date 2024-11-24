@@ -100,12 +100,10 @@ http://localhost:8080
 
 ## API Endpoints
 
-| Method | Endpoint        | Description          |
-| ------ | --------------- | -------------------- |
-| GET    | `/items`      | Retrieve all items   |
-| POST   | `/items`      | Create a new item    |
-| PUT    | `/items/{id}` | Update an item by ID |
-| DELETE | `/items/{id}` | Delete an item by ID |
+| Method | Endpoint         | Description         |
+| ------ | ---------------- | ------------------- |
+| GET    | `/healthCheck` | Check Server Status |
+|        |                  |                     |
 
 ## Docker Setup
 
