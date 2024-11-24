@@ -4,7 +4,6 @@
   <img src="https://github.com/gofr-dev/gofr/assets/44036979/916fe7b1-42fb-4af1-9e0b-4a7a064c243c" alt="Application Banner" width="600">
 </p>
 
-
 ## Overview
 
 This Go-based application leverages **GORF** (Go ORM Framework) for database interaction and **MongoDB** as the primary database. The architecture is designed for scalability, simplicity, and high performance, suitable for modern, production-ready web applications.
@@ -45,8 +44,13 @@ go mod tidy
 Update the `.env` file in the `configs` directory with your MongoDB connection details:
 
 ```dotenv
-MONGO_URI=mongodb://localhost:27017
-DATABASE_NAME=your_database_name
+SERVER_PORT=8080
+DATABASE_HOST=localhost
+DATABASE_PORT=27017
+DATABASE_SSL_MODE=disable
+DATABASE_NAME=test
+DATABASE_PASSWORD=mongo
+DATABASE_USERNAME=mongo
 ```
 
 ### 4. Run the Application
